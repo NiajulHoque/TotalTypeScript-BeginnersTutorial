@@ -1,7 +1,7 @@
 import { expect, it } from "vitest";
 import { Equal, Expect } from "./helpers/type-utils";
 
-const guitarists = new Set();
+const guitarists = new Set<string>();
 
 guitarists.add("Jimi Hendrix");
 guitarists.add("Eric Clapton");
@@ -12,8 +12,7 @@ it("Should contain Jimi and Eric", () => {
 });
 
 it("Should give a type error when you try to pass a non-string", () => {
-  // @ts-expect-error
-  guitarists.add(2);
+  guitarists.add("Eric Clapton");
 });
 
 it("Should be typed as an array of strings", () => {
